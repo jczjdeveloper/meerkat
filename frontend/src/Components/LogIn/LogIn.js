@@ -1,4 +1,7 @@
 import React, {PropTypes} from 'react';
+import TextField from 'material-ui/TextField';
+import {Card} from 'material-ui/Card';
+
 import './LogIn.css';
 
 export default class LogIn extends React.Component {
@@ -8,10 +11,13 @@ export default class LogIn extends React.Component {
 
   render() {
     return (
-      <h1>This is the login component!</h1>
+      <Card>
+        <TextField id="loginEmail" hintText="Password Field" floatingLabelText="Enter Email" type="password"/>
+        <br/>
+        <TextField id="loginPassword" hintText="Password Field" floatingLabelText="Enter Password" type="password"/>
+      </Card>
     );
   }
 }
 
-LogIn.propTypes = {
-};
+LogIn.propTypes = {};

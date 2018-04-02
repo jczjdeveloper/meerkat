@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import logo from './logo.svg';
@@ -11,12 +11,16 @@ import SignUp from '../SignUp/SignUp';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <MuiThemeProvider>
+        <Router>
 
-        <Route exact path="/login" component={LogIn}/>
-        <Route exact path="/signup" component={SignUp}/>
+          <Switch>
+            <Route exact path="/" component={LogIn}/>
+            <Route exact path="/signup" component={SignUp}/>
+          </Switch>
 
-      </Router>
+        </Router>
+      </MuiThemeProvider>
     );
   }
 }
